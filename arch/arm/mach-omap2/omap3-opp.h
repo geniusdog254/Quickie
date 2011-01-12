@@ -43,11 +43,11 @@ static struct omap_opp omap3630_dsp_rate_table[] = {
 static struct omap_opp omap3621_mpu_rate_table[] = {
 	{0, 0, 0},
 	/*OPP1*/
-	{S300M, VDD1_OPP1, 0x20, 0x0},
+	{S300M, VDD1_OPP1, 0x16, 0x0},
 	/*OPP2*/
-	{S600M, VDD1_OPP2, 0x2D, 0x0},
+	{S600M, VDD1_OPP2, 0x20, 0x0},
 	/*OPP3*/
-	{S900M, VDD1_OPP3, 0x38, 0x0},
+	{S900M, VDD1_OPP3, 0x28, 0x0},
 	/*OPP4*/
 	{S800M, VDD1_OPP4, 0x22, 0x0},
 	/*OPP5*/
