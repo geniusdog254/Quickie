@@ -513,11 +513,12 @@ static const struct dac3100_configs dac3100_reg_init[] = {
     
 	/* Headphone powerup */
 	/* Left Channel Volume routed to HPL and gain -6 db */
-	{LEFT_ANALOG_HPL, 0x8C}, 
+	//Jesse C. - These next 3 values were all 8c
+	{LEFT_ANALOG_HPL, 0xFF}, 
 	/* Right Channel Volume routed to HPR and gain -6 db */
-	{RIGHT_ANALOG_HPR, 0x8C}, 
+	{RIGHT_ANALOG_HPR, 0xFF}, 
 	/* Left Analog Volume routed to class-D and gain -6 db */
-	{LEFT_ANALOG_SPL, 0x8C},        /* Mistral: Updated this value from 0x80 to 0x30. */
+	{LEFT_ANALOG_SPL, 0xFF},        /* Mistral: Updated this value from 0x80 to 0x30. */
 	{CLASS_D_SPK, 0x06},            /* Mistral: Updated this value from 0xc6 to 0x06 */
     {SPL_DRIVER, 0x04},             /* Mistral: Added this new value to keep the Class-D Speaker in MUTE by default */
 	{HP_OUT_DRIVERS, 0xCE},         /* Mistral modified value to power down DAC after HP and SPK Amplifiers */
@@ -531,9 +532,8 @@ static const struct dac3100_configs dac3100_reg_init[] = {
 
     /* Mistral Added following configuration for EQ Setup */
     /* reg[0][65] should be configured to -6dB */
-    /* Mistral: Updated the DACR volume also to -6dB */ 
-    {LDAC_VOL, 0xFD}, /* Update DACL volume control from -6db to -1.5db to get speaker and Headphone volume loud enough on Encore device */
-    {RDAC_VOL, 0xFD}, /* Update DACR volume control from -6db to -1.5db to get speaker and Headphone volume loud enough on Encore device */
+    {LDAC_VOL, 0xFF}, /* Update DACL volume control from -6db to -1.5db to get speaker and Headphone volume loud enough on Encore device */
+    {RDAC_VOL, 0xFF}, /* Update DACR volume control from -6db to -1.5db to get speaker and Headphone volume loud enough on Encore device */
     
     /* reg[1][42] should be configured at 0x04. This is already done above */
     /* reg[1][35] should be configured correctly. This is already done above */ 
