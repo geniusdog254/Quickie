@@ -414,7 +414,7 @@ u8 omap_pm_get_max_vdd1_opp()
 
   if (cpu_is_omap3621())
     //Jesse C. - This is it. Set this to the max OPP you want access too
-    return VDD1_OPP6;
+    return VDD1_OPP3;
 	else if (cpu_is_omap3630()) {
 		switch (omap_rev_id()) {
 		case OMAP_3630:
