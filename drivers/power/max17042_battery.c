@@ -750,12 +750,12 @@ static int max17042_battery_temperature(struct max17042_data* max17042)
 		// in unit of micro-degree, 
 		if ( temp & (1<<15) ) {
 			//negtive value
-			max17042->temp_cached = COMPLEMENT_VAL(temp, TEMP_RESOLUTION, 1); 
+			max17042->temp_cached = COMPLEMENT_VAL(temp, TEMP_RESOLUTION, 100000); 
 			//(~(temp & 0x7FFF) + 1) * TEMP_RESOLUTION * (-1);
 		}
 		else {
 			//positive value
-			max17042->temp_cached = NON_COMPLEMENT_VAL(temp, TEMP_RESOLUTION, 1);
+			max17042->temp_cached = NON_COMPLEMENT_VAL(temp, TEMP_RESOLUTION, 100000);
 			//(temp & 0x7FFF) * TEMP_RESOLUTION;
 		}
 	}
@@ -1322,7 +1322,7 @@ static int __devinit max17042_probe(struct i2c_client *client,
 	max17042->rsoc_base = max17042->rsoc_cached = 100;
 	max17042->volt_cached = 4000000;
 	max17042->curr_cached = 300000;
-   	max17042->temp_cached = 25000000;	
+   	max17042->temp_cached = 250;	
 	max17042->dumpFormat = DUMP_FMT_NONE;
 	max17042->next_save = jiffies + HISTORY_REFRESH_INTERVAL*HZ;
 
